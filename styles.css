@@ -1,0 +1,8 @@
+:root {
+    font-family: "Inter", sans-serif;
+    --primary-color: #1992d4;
+}
+
+nav svg, .menu svg, .project-options svg { width: 20px; }
+
+.trending img { width: 60px; }
