@@ -18,6 +18,7 @@ a {
 }
 ul { list-style: none; }
 article { background-color: var(--content-background-color); }
+img { border-radius: 50%; }
 
 /* Layout Setup */
 .container {
@@ -69,19 +70,15 @@ article section:first-child {
 /* Search Menu Styles */
 .search-menu {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+    grid-template-columns: 1.5fr 1fr;
+    padding: 1rem 2rem;
+    row-gap: 1rem;
 
-.search-menu input {
-    border: none;
-    background-color: var(--content-background-color);
-    border-radius: 20px;
-    height: 30px;
-    padding: 0 10px;
-}
-
-.search-menu input:focus {
-    outline: 2px solid black;
+    /* box shadow generated with https://www.cssmatic.com/box-shadow */
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .search-menu > div {
@@ -89,13 +86,39 @@ article section:first-child {
     align-items: center;
 }
 
-button {
+.search { gap: 1rem; }
+
+.search-menu div:nth-child(even) {
+    justify-self: end;
+    gap: 1.5rem;
+    font-weight: var(--semi-bold);
+}
+
+.search-menu input {
+    border: none;
+    background-color: var(--content-background-color);
+    border-radius: 20px;
+    height: 30px;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+}
+
+.search-menu input:focus { outline: 2px solid black; }
+.search-menu h1 { font-size: 1.5rem; }
+
+.greet {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-menu button {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    font-weight: var(--semi-bold);
     padding: 10px 30px;
     border-radius: 20px;
+    font-weight: var(--semi-bold);
 }
 
 /* Projects Catalog Styles */
