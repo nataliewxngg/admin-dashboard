@@ -20,6 +20,13 @@ ul { list-style: none; }
 article { background-color: var(--content-background-color); }
 img { border-radius: 50%; }
 
+.search-menu, .project, .announcements, .trendings {
+    /* box shadow generated with https://www.cssmatic.com/box-shadow */
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.1);
+}
+
 /* Layout Setup */
 .container {
     display: grid;
@@ -33,6 +40,8 @@ article {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-column: span 2;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 article section:first-child {
@@ -74,11 +83,7 @@ article section:first-child {
     padding: 1rem 2rem;
     row-gap: 1rem;
 
-    /* box shadow generated with https://www.cssmatic.com/box-shadow */
-    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
-    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
-    position: relative;
+    position: relative; /* places box-shadow above the projects catalog */
 }
 
 .search-menu > div {
@@ -122,9 +127,13 @@ article section:first-child {
 }
 
 /* Projects Catalog Styles */
+article section > h1 {
+    margin: 0.5rem 0;
+}
+
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
@@ -132,6 +141,17 @@ article section:first-child {
     background-color: white;
     border-left: 5px solid var(--secondary-color);
     border-radius: 7px;
+    padding: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem; 
+}
+
+.project h1 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
 }
 
 .project p {
@@ -142,6 +162,7 @@ article section:first-child {
 .project-options {
     display: flex;
     justify-content: end;
+    gap: 1rem;
 }
 
 /* Announcements Styles */
